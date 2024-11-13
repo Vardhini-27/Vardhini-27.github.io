@@ -13,7 +13,7 @@ function enlargeImage() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const navItems = document.querySelectorAll('nav a');
+    const navItems = document.querySelectorAll('nav a, .dropbtn');
 
     navItems.forEach(item => {
         item.addEventListener('mouseover', function() {
