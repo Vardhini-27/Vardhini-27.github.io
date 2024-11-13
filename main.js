@@ -25,38 +25,66 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-function submitForm() {
-// Prevent the default form submission behavior
-event.preventDefault();
-// Collect form data
-var name = document.getElementById('name').value;
-var contactMethod = document.querySelector('input[name="contactMethod"]:checked').value;
-var interests = [];
-document.querySelectorAll('input[name="interests"]:checked').forEach(function (checkbox) {
-interests.push(checkbox.value);
-});
-var comments = document.getElementById('comments').value;
-// Store data in localStorage
-localStorage.setItem('formData', JSON.stringify({
-name: name,
-contactMethod: contactMethod,
-interests: interests,
-comments: comments
-}));
-// Alert user that data has been saved
-alert('Form data saved successfully!');
+// Function to handle input events
+function inputHandler(elementId) {
+    var element = document.getElementById(elementId);
+    
+    // Handle dynamic display for the name field
+    if (elementId === 'name') {
+        var nameValue = element.value;
+        document.getElementById('dynamicNameDisplay').innerText = 'Your Name: ' + nameValue;
+    }
+
+    // Handle other inputs for future enhancements if needed
 }
+
+// Function to handle form submission
+function submitForm() {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    // Collect form data
+    var name = document.getElementById('name').value;
+    var contactMethod = document.querySelector('input[name="contactMethod"]:checked').value;
+    var interests = [];
+    document.querySelectorAll('input[name="interests"]:checked').forEach(function (checkbox) {
+        interests.push(checkbox.value);
+    });
+    var comments = document.getElementById('comments').value;
+
+    // Store data in localStorage
+    localStorage.setItem('formData', JSON.stringify({
+        name: name,
+        contactMethod: contactMethod,
+        interests: interests,
+        comments: comments
+    }));
+
+    // Alert user that data has been saved
+    alert('Form data saved successfully!');
+}
+
 // Function to handle form reset
 function resetForm() {
-// Clear the form inputs
-document.getElementById('name').value = '';
-document.querySelectorAll('input[name="contactMethod"]').forEach(function (radio) {
-radio.checked = false;
-});
-document.querySelectorAll('input[name="interests"]').forEach(function (checkbox) {
-checkbox.checked = false;
-});
-document.getElementById('comments').value = '';
-// Alert user that form has been cleared
-alert('Form cleared successfully!');
+    // Clear the form inputs
+    document.getElementById('name').value = '';
+    document.querySelectorAll('input[name="contactMethod"]').forEach(function (radio) {
+        radio.checked = false;
+    });
+    document.querySelectorAll('input[name="interests"]').forEach(function (checkbox) {
+        checkbox.checked = false;
+    });
+    document.getElementById('comments').value = '';
+    document.getElementById('dynamicNameDisplay').innerText = 'Your Name: ';
+
+    // Alert user that form has been cleared
+    alert('Form cleared successfully!');
 }
+
+// Ensure inputHandler() is defined for all relevant input fields
+window.onload = function() {
+    inputHandler('name');
+    inputHandler('contactMethod');
+    inputHandler('interests');
+    inputHandler('comments');
+};
