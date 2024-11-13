@@ -93,7 +93,17 @@
         <label for="email">Your Email Address:</label>
         <input id="email" type="text" email="email" oninput="inputHandler('email')" required>
     </p>
-    <!-- 2. Radio Buttons (Preferred Contact Method) -->
+   <p>
+        <label for="yearStudy">Year of Study:</label><br>
+        <input type="radio" id="1st" name="yearStudy" value="1st" oninput="inputHandler('yearStudy')">
+        <label for="1st">1st Year</label><br>
+        <input type="radio" id="2nd" name="yearStudy" value="2nd" oninput="inputHandler('yearStudy')">
+        <label for="2nd">2nd Year</label><br>
+        <input type="radio" id="3rd" name="yearStudy" value="3rd" oninput="inputHandler('yearStudy')">
+        <label for="3rd">3rd Year</label><br>
+        <input type="radio" id="4th" name="yearStudy" value="4th" oninput="inputHandler('yearStudy')">
+        <label for="4th">4th Year</label><br>
+    </p>
     <p>
         <label for="contactMethod">Preferred Contact Method:</label><br>
         <input type="radio" id="email" name="contactMethod" value="Email" oninput="inputHandler('contactMethod')">
