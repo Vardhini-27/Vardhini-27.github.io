@@ -59,35 +59,48 @@
         <td><div class="text-div"><p>For more infomration about my univeristy, please visit this page.</p></div></td>
     </tr>
 </table>
-<form id="myForm" onsubmit="storeData()" method="POST">
+<!-- Form with 8 distinct elements -->
+<form id="myForm">
     <h2>Contact Us</h2>
+
+    <!-- 1. Single Text Field (Name) with oninput handler -->
     <p>
         <label for="name">Your Name:</label>
-        <input id="name" type="text" name="name" value="John Doe" required>
+        <input id="name" type="text" name="name" oninput="inputHandler('name')" required>
     </p>
+    <!-- Paragraph to display dynamic input -->
+    <p id="dynamicNameDisplay">Your Name: </p>
+
+    <!-- 2. Radio Buttons (Preferred Contact Method) -->
     <p>
         <label for="contactMethod">Preferred Contact Method:</label><br>
-        <input type="radio" id="email" name="contactMethod" value="Email">
+        <input type="radio" id="email" name="contactMethod" value="Email" oninput="inputHandler('contactMethod')">
         <label for="email">Email</label><br>
-        <input type="radio" id="phone" name="contactMethod" value="Phone" checked>
+        <input type="radio" id="phone" name="contactMethod" value="Phone" oninput="inputHandler('contactMethod')">
         <label for="phone">Phone</label><br>
     </p>
+
+    <!-- 3. Checkboxes (Interests) -->
     <p>
         <label for="interests">Select Your Interests:</label><br>
-        <input type="checkbox" id="dataScience" name="interests" value="Data Science">
+        <input type="checkbox" id="dataScience" name="interests" value="Data Science" oninput="inputHandler('interests')">
         <label for="dataScience">Data Science</label><br>
-        <input type="checkbox" id="machineLearning" name="interests" value="Machine Learning" checked>
+        <input type="checkbox" id="machineLearning" name="interests" value="Machine Learning" oninput="inputHandler('interests')">
         <label for="machineLearning">Machine Learning</label><br>
-        <input type="checkbox" id="ai" name="interests" value="AI">
+        <input type="checkbox" id="ai" name="interests" value="AI" oninput="inputHandler('interests')">
         <label for="ai">AI</label><br>
     </p>
+
+    <!-- 4. Multiple Text Field (Comments) -->
     <p>
         <label for="comments">Additional Comments:</label><br>
-        <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Enter your comments here..."></textarea>
+        <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Enter your comments here..." oninput="inputHandler('comments')"></textarea>
     </p>
+
+    <!-- Submit and Clear Buttons -->
     <p>
-        <input type="submit" value="Submit">
-        <input type="reset" value="Clear">
+        <input type="submit" value="Submit" onclick="submitForm()">
+        <input type="reset" value="Clear" onclick="resetForm()">
     </p>
 </form>
 </div>
