@@ -47,3 +47,18 @@ tr{
 tr:hover{
     background-color: bisque;
 }
+button {
+    font-size: 16px;
+    margin: 10px;
+}
+#displayName {
+    font-size: 18px;
+    color: blue;
+}
+#clickableImage {
+    widtch: 200px;
+    transition: width 0.3s;
+}
+#clickableImage.enlarged {
+    width: 400px;
+}
