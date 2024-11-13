@@ -59,6 +59,47 @@
         <td><div class="text-div"><p>For more infomration about my univeristy, please visit this page.</p></div></td>
     </tr>
 </table>
+<form id="myForm" onsubmit="storeData()" method="POST">
+    <h2>Contact Us</h2>
+
+    <!-- 1. Single Text Field (Name) -->
+    <p>
+        <label for="name">Your Name:</label>
+        <input id="name" type="text" name="name" value="John Doe" required>
+    </p>
+
+    <!-- 2. Radio Buttons (Preferred Contact Method) -->
+    <p>
+        <label for="contactMethod">Preferred Contact Method:</label><br>
+        <input type="radio" id="email" name="contactMethod" value="Email">
+        <label for="email">Email</label><br>
+        <input type="radio" id="phone" name="contactMethod" value="Phone" checked>
+        <label for="phone">Phone</label><br>
+    </p>
+
+    <!-- 3. Checkboxes (Interests) -->
+    <p>
+        <label for="interests">Select Your Interests:</label><br>
+        <input type="checkbox" id="dataScience" name="interests" value="Data Science">
+        <label for="dataScience">Data Science</label><br>
+        <input type="checkbox" id="machineLearning" name="interests" value="Machine Learning" checked>
+        <label for="machineLearning">Machine Learning</label><br>
+        <input type="checkbox" id="ai" name="interests" value="AI">
+        <label for="ai">AI</label><br>
+    </p>
+
+    <!-- 4. Multiple Text Field (Comments) -->
+    <p>
+        <label for="comments">Additional Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Enter your comments here..."></textarea>
+    </p>
+
+    <!-- Submit and Clear Buttons -->
+    <p>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </p>
+</form>
 </div>
 </body>
 </html>
